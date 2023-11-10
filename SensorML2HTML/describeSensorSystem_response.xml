@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swes:DescribeSensorResponse xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml/3.2" xsi:schemaLocation="http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swesDescribeSensor.xsd http://inspire.ec.europa.eu/schemas/ef/4.0 http://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd http://www.isotc211.org/2005/gco http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd">
+  <swes:procedureDescriptionFormat>http://www.opengis.net/sensorml/2.0</swes:procedureDescriptionFormat>
+  <swes:description>
+    <swes:SensorDescription>
+      <swes:validTime>
+        <gml:TimePeriod gml:id="tp_39679B15052A2AA30232EF92209BEB188D1297D2">
+          <gml:beginPosition>2023-06-14T13:46:12.498Z</gml:beginPosition>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </swes:validTime>
+      <swes:data>
+        <sml:PhysicalSystem xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="ps_305AA220A68DF6A7D872D8DDEEDBF51A4D4C5429" xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+          <gml:description>The Vantage Pro Wireless Weather Station include two components: the Integrated Sensor Suite (ISS) which houses and manages the external sensor array; and the console which provides the user interface, data display, A/D conversion, and calculations. The ISS and Vantage Pro console communicate via an FCCcertified, licensefree transmitter and receiver. Userselectable DavisTalk ID codes allow up to eight stations to coexist in the same geographic area. The console may be powered by batteries or by the included ACpower adapter. The wireless ISS is solar powered with a battery backup. Use WeatherLInk for Vantage Pro to interface your weather station with a computer, to log weather data, and to upload weather information to the internet.</gml:description>
+          <gml:identifier codeSpace="uniqueID">http://registry.get-it.it/sensors/systemsType/Vantage/Davis_Instruments/BE62542EAE3779425CA76390777943A5</gml:identifier>
+          <gml:name>Davis Vantage PRO</gml:name>
+          <sml:keywords>
+            <sml:KeywordList>
+              <sml:keyword>Itineris</sml:keyword>
+              <sml:keyword>PNRR</sml:keyword>
+              <sml:keyword>Sensor Catalogue</sml:keyword>
+              <sml:keyword>Sensors</sml:keyword>
+              <sml:keyword>eLTER</sml:keyword>
+            </sml:KeywordList>
+          </sml:keywords>
+          <sml:identification>
+            <sml:IdentifierList>
+              <sml:identifier>
+                <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0008/">
+                  <sml:label>uniqueID</sml:label>
+                  <sml:value>http://registry.get-it.it/sensors/systemsType/Vantage/Davis_Instruments/BE62542EAE3779425CA76390777943A5</sml:value>
+                </sml:Term>
+              </sml:identifier>
+              <sml:identifier>
+                <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0006/">
+                  <sml:label>shortName</sml:label>
+                  <sml:value>Vantage Pro</sml:value>
+                </sml:Term>
+              </sml:identifier>
+              <sml:identifier>
+                <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0012/">
+                  <sml:label>Manufacturer</sml:label>
+                  <sml:value>Davis Instruments</sml:value>
+                </sml:Term>
+              </sml:identifier>
+              <sml:identifier>
+                <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0003/">
+                  <sml:label>Model Name</sml:label>
+                  <sml:value>Vantage</sml:value>
+                </sml:Term>
+              </sml:identifier>
+              <sml:identifier>
+                <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0002/">
+                  <sml:label>longName</sml:label>
+                  <sml:value>Wireless Vantage Pro Station</sml:value>
+                </sml:Term>
+              </sml:identifier>
+              <sml:identifier>
+                <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0013/">
+                  <sml:label>Version</sml:label>
+                  <sml:value>Pro</sml:value>
+                </sml:Term>
+              </sml:identifier>
+            </sml:IdentifierList>
+          </sml:identification>
+          <sml:classification>
+            <sml:ClassifierList>
+              <sml:classifier>
+                <sml:Term definition="http://www.opengis.net/def/property/OGC/0/SensorType">
+                  <sml:label>Automated Weather System</sml:label>
+                  <sml:value>http://vocab.nerc.ac.uk/collection/P10/current/GI000071/</sml:value>
+                </sml:Term>
+              </sml:classifier>
+            </sml:ClassifierList>
+          </sml:classification>
+          <sml:validTime>
+            <gml:TimePeriod gml:id="tp_6F6D6B616EAD3A62A31DCEFA818291E356FDDFF1">
+              <gml:beginPosition>2023-06-14T13:46:12.498Z</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </sml:validTime>
+          <sml:characteristics name="characteristics">
+            <sml:CharacteristicList>
+              <sml:characteristic name="physicalProperties">
+                <swe:DataRecord>
+                  <swe:field name="PhysicalProperties">
+                    <swe:DataRecord>
+                      <swe:field name="Material">
+                        <swe:Text definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0005/">
+                          <swe:description>UVresistant ABS plastic</swe:description>
+                        </swe:Text>
+                      </swe:field>
+                      <swe:field name="Weight">
+                        <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0001/">
+                          <swe:uom code="kg" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/KGXX/"/>
+                          <swe:value>0.85</swe:value>
+                        </swe:Quantity>
+                      </swe:field>
+                      <swe:field name="Length">
+                        <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0002/">
+                          <swe:uom code="mm" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"/>
+                          <swe:value>38</swe:value>
+                        </swe:Quantity>
+                      </swe:field>
+                      <swe:field name="Width">
+                        <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0004/">
+                          <swe:uom code="mm" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"/>
+                          <swe:value>156</swe:value>
+                        </swe:Quantity>
+                      </swe:field>
+                      <swe:field name="Height">
+                        <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0003/">
+                          <swe:uom code="mm" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"/>
+                          <swe:value>264</swe:value>
+                        </swe:Quantity>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </swe:field>
+                </swe:DataRecord>
+              </sml:characteristic>
+              <sml:characteristic name="electricalRequirements">
+                <swe:DataRecord>
+                  <swe:field name="ElectricalCurrentType">
+                    <swe:Category definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0009/">
+                      <swe:value>DC</swe:value>
+                    </swe:Category>
+                  </swe:field>
+                  <swe:field name="BatteryChargingCurrent">
+                    <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/MVB/current/MVB000064/">
+                      <swe:uom code="mA" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UMAM/"/>
+                      <swe:value>0.67</swe:value>
+                    </swe:Quantity>
+                  </swe:field>
+                  <swe:field name="BatteryOutput">
+                    <swe:QuantityRange definition="http://vocab.nerc.ac.uk/collection/S29/current/PE001260/">
+                      <swe:uom code="V" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVLT/"/>
+                      <swe:value>4 6</swe:value>
+                    </swe:QuantityRange>
+                  </swe:field>
+                </swe:DataRecord>
+              </sml:characteristic>
+              <sml:characteristic name="dataSpecifications">
+                <swe:DataRecord>
+                  <swe:field name="Dataformat">
+                    <swe:Text>
+                      <swe:description>ASCII</swe:description>
+                    </swe:Text>
+                  </swe:field>
+                </swe:DataRecord>
+              </sml:characteristic>
+            </sml:CharacteristicList>
+          </sml:characteristics>
+          <sml:capabilities name="capabilities">
+            <sml:CapabilityList>
+              <sml:capability name="Mobile">
+                <swe:Boolean>
+                  <swe:value>false</swe:value>
+                </swe:Boolean>
+              </sml:capability>
+              <sml:capability name="Insitu">
+                <swe:Boolean>
+                  <swe:value>true</swe:value>
+                </swe:Boolean>
+              </sml:capability>
+            </sml:CapabilityList>
+          </sml:capabilities>
+          <sml:contacts>
+            <sml:ContactList>
+              <sml:contact xlink:title="Davis Instruments" xlink:href="http://rdfdata.get-it.it/sensors/manufacturers/170">
+                <gmd:CI_ResponsibleParty>
+                  <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode/" codeListValue="originator">Davis Instruments</gmd:CI_RoleCode>
+                  </gmd:role>
+                </gmd:CI_ResponsibleParty>
+              </sml:contact>
+            </sml:ContactList>
+          </sml:contacts>
+          <sml:documentation xlink:arcrole="datasheet">
+            <sml:DocumentList>
+              <sml:document>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>http://estacion.at.fcen.uba.ar/especificaciones.pdf</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </sml:document>
+            </sml:DocumentList>
+          </sml:documentation>
+          <sml:featuresOfInterest>
+            <sml:FeatureList definition="http://www.opengis.net/def/featureOfInterest/identifier">
+              <swe:label>featuresOfInterest</swe:label>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001007"/>
+              <sml:feature xlink:href="https://deims.org/588940f5-ce9f-4248-82bb-c9ce1c39ec31"/>
+              <sml:feature xlink:href="https://deims.org/f30007c4-8a6e-4f11-ab87-569db54638fe"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4186/8.03285"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.7876/8.55346"/>
+              <sml:feature xlink:href="https://deims.org/c7fe4203-24b1-4d11-a573-99b99204fede"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9341/8.63463"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001137-P06"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9309/8.53207"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1358/8.76678"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3212/7.90719"/>
+              <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode:LTER_EU_IT_009"/>
+              <sml:feature xlink:href="http://test.get-it.it"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.322/7.90251"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8047/8.57334"/>
+              <sml:feature xlink:href="https://deims.org/9aa88bb6-b4a9-4569-8520-3d26643e6de9"/>
+              <sml:feature xlink:href="http://sp7.irea.cnr.it/sensors/getit.lteritalia.it/foi/SSF/SP/EPSG:4326/49.49667452747045/21.796875"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4271/8.0321"/>
+              <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode_data:geonode:Lake_Viverone_366"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3245/7.90412"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4114/8.02564"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8305/8.58924"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9168/8.50401"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3231/7.91308"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0396/8.7314"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3229/7.9055"/>
+              <sml:feature xlink:href="https://deims.org/8eda49e9-1f4e-4f3e-b58e-e0bb25dc32a6"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0097/8.71222"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3248/7.91127"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.7434/8.58281"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001469-SPN"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1625/8.83798"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4138/8.04503"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI000049-917"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1012/8.71904"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3257/7.91911"/>
+              <sml:feature xlink:href="https://deims.org/270a41c4-33a8-4da6-9258-2ab10916f262"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0611/8.71722"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1491/8.74025"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3304/7.91835"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0746/8.69912"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9665/8.65647"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3262/7.90974"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9269/8.60705"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0006/8.66521"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8984/8.56262"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001241-S1"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI000328-UMO"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3289/7.91563"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI000049-1675"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8295/8.61533"/>
+              <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode:LTER_EU_IT_045"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8894/8.54213"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001230-Lagdei"/>
+              <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001241-E1"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4076/8.03769"/>
+              <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode:LTER_EU_AT_003"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9193/8.52526"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4221/8.04144"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8551/8.57672"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4218/8.0267"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9301/8.58381"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8705/8.58493"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0003/8.72113"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1462/8.83132"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3274/7.91731"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9547/8.63403"/>
+              <sml:feature xlink:href="https://deims.org/92fd6fad-99cd-4972-93bd-c491f0be1301"/>
+              <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4078/8.04849"/>
+            </sml:FeatureList>
+          </sml:featuresOfInterest>
+          <sml:components>
+            <sml:ComponentList>
+              <sml:component name="ID_component_4916747B0A11F3E17CF1A5A10E22ADA5" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/4916747B0A11F3E17CF1A5A10E22ADA5"/>
+              <sml:component name="ID_component_6BE86A73FFF6F5C49486434EB8D88F39" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/6BE86A73FFF6F5C49486434EB8D88F39"/>
+              <sml:component name="ID_component_D7EA2AEBC42B02F3F4B58367599A7709" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/D7EA2AEBC42B02F3F4B58367599A7709"/>
+              <sml:component name="ID_component_78ED0D9CFF4E2633095ACF7A30F66B47" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/78ED0D9CFF4E2633095ACF7A30F66B47"/>
+              <sml:component name="ID_component_E3E96E47E70EA7EA00D665481E7708A0" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/E3E96E47E70EA7EA00D665481E7708A0"/>
+              <sml:component name="ID_component_DA356A66A77005781A751CF9ACBB98F5" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/DA356A66A77005781A751CF9ACBB98F5"/>
+              <sml:component name="ID_component_CCE505E052EF06B83F6E47482A351D68" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/CCE505E052EF06B83F6E47482A351D68"/>
+              <sml:component name="component1">
+                <sml:PhysicalComponent gml:id="pc_BA83D2F3127801B0E0C0EEE14E588B821A40D846" xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+                  <gml:description>The Pressure sensor of Vantage Pro Wireless Weather Station</gml:description>
+                  <gml:identifier codeSpace="uniqueID">http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/4916747B0A11F3E17CF1A5A10E22ADA5</gml:identifier>
+                  <gml:name>Davis Vantage PRO Air Pressure Sensor sensor</gml:name>
+                  <sml:keywords>
+                    <sml:KeywordList>
+                      <sml:keyword>Davis Vantage PRO Air Pressure Sensor sensor</sml:keyword>
+                      <sml:keyword>http://vocab.nerc.ac.uk/collection/P02/current/CAPH/</sml:keyword>
+                      <sml:keyword>http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/4916747B0A11F3E17CF1A5A10E22ADA5</sml:keyword>
+                    </sml:KeywordList>
+                  </sml:keywords>
+                  <sml:identification>
+                    <sml:IdentifierList>
+                      <sml:identifier>
+                        <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0008/">
+                          <sml:label>uniqueID</sml:label>
+                          <sml:value>http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/4916747B0A11F3E17CF1A5A10E22ADA5</sml:value>
+                        </sml:Term>
+                      </sml:identifier>
+                      <sml:identifier>
+                        <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0006/">
+                          <sml:label>shortName</sml:label>
+                          <sml:value>Davis Vantage PRO Air Pressure Sensor sensor</sml:value>
+                        </sml:Term>
+                      </sml:identifier>
+                      <sml:identifier>
+                        <sml:Term definition="urn:ogc:def:identifier:OGC:1.0:longname">
+                          <sml:label>longName</sml:label>
+                          <sml:value>http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/4916747B0A11F3E17CF1A5A10E22ADA5</sml:value>
+                        </sml:Term>
+                      </sml:identifier>
+                    </sml:IdentifierList>
+                  </sml:identification>
+                  <sml:classification>
+                    <sml:ClassifierList>
+                      <sml:classifier>
+                        <sml:Term definition="http://www.opengis.net/def/property/OGC/0/SensorType">
+                          <sml:label>Air Pressure Sensor</sml:label>
+                          <sml:value>http://vocab.nerc.ac.uk/collection/P10/current/GIV30003/</sml:value>
+                        </sml:Term>
+                      </sml:classifier>
+                    </sml:ClassifierList>
+                  </sml:classification>
+                  <sml:validTime>
+                    <gml:TimePeriod gml:id="tp_2309644A8F8673D88C92CE524C9ACAC061BF5168">
+                      <gml:beginPosition>2023-06-14T13:46:28.890Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                    </gml:TimePeriod>
+                  </sml:validTime>
+                  <sml:capabilities name="capabilities">
+                    <sml:CapabilityList>
+                      <sml:capability name="Accuracy">
+                        <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W04/current/CAPB0001/">
+                          <swe:uom code="hPa" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"/>
+                          <swe:value>0.1</swe:value>
+                        </swe:Quantity>
+                      </sml:capability>
+                      <sml:capability name="MinimumReportingFrequency">
+                        <swe:Quantity definition="https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMFrequency">
+                          <swe:uom code="s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UTBB/"/>
+                          <swe:value>5.0</swe:value>
+                        </swe:Quantity>
+                      </sml:capability>
+                    </sml:CapabilityList>
+                  </sml:capabilities>
+                  <sml:contacts>
+                    <sml:ContactList>
+                      <sml:contact>
+                        <gmd:CI_ResponsibleParty>
+                          <gmd:individualName>
+                            <gco:CharacterString>IREA CNR</gco:CharacterString>
+                          </gmd:individualName>
+                          <gmd:organisationName>
+                            <gco:CharacterString>IREA CNR</gco:CharacterString>
+                          </gmd:organisationName>
+                          <gmd:positionName>
+                            <gco:CharacterString>TBA</gco:CharacterString>
+                          </gmd:positionName>
+                          <gmd:contactInfo>
+                            <gmd:CI_Contact>
+                              <gmd:phone>
+                                <gmd:CI_Telephone>
+                                  <gmd:voice>
+                                    <gco:CharacterString>+3902000000</gco:CharacterString>
+                                  </gmd:voice>
+                                </gmd:CI_Telephone>
+                              </gmd:phone>
+                              <gmd:address>
+                                <gmd:CI_Address>
+                                  <gmd:deliveryPoint>
+                                    <gco:CharacterString>Via Alfonso Corti 12</gco:CharacterString>
+                                  </gmd:deliveryPoint>
+                                  <gmd:city>
+                                    <gco:CharacterString>Milan</gco:CharacterString>
+                                  </gmd:city>
+                                  <gmd:postalCode>
+                                    <gco:CharacterString>20133</gco:CharacterString>
+                                  </gmd:postalCode>
+                                  <gmd:country>
+                                    <gco:CharacterString>Italy</gco:CharacterString>
+                                  </gmd:country>
+                                  <gmd:electronicMailAddress>
+                                    <gco:CharacterString>infogetitsk@gmail.com</gco:CharacterString>
+                                  </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                              </gmd:address>
+                              <gmd:onlineResource xlink:href="http://www.irea.cnr.it"/>
+                            </gmd:CI_Contact>
+                          </gmd:contactInfo>
+                          <gmd:role>
+                            <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode/" codeListValue="CI_RoleCode_pointOfContact">Point of Contact</gmd:CI_RoleCode>
+                          </gmd:role>
+                        </gmd:CI_ResponsibleParty>
+                      </sml:contact>
+                    </sml:ContactList>
+                  </sml:contacts>
+                  <sml:featuresOfInterest>
+                    <sml:FeatureList definition="http://www.opengis.net/def/featureOfInterest/identifier">
+                      <swe:label>featuresOfInterest</swe:label>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001007"/>
+                      <sml:feature xlink:href="https://deims.org/588940f5-ce9f-4248-82bb-c9ce1c39ec31"/>
+                      <sml:feature xlink:href="https://deims.org/f30007c4-8a6e-4f11-ab87-569db54638fe"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4186/8.03285"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.7876/8.55346"/>
+                      <sml:feature xlink:href="https://deims.org/c7fe4203-24b1-4d11-a573-99b99204fede"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9341/8.63463"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001137-P06"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9309/8.53207"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1358/8.76678"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3212/7.90719"/>
+                      <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode:LTER_EU_IT_009"/>
+                      <sml:feature xlink:href="http://test.get-it.it"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.322/7.90251"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8047/8.57334"/>
+                      <sml:feature xlink:href="https://deims.org/9aa88bb6-b4a9-4569-8520-3d26643e6de9"/>
+                      <sml:feature xlink:href="http://sp7.irea.cnr.it/sensors/getit.lteritalia.it/foi/SSF/SP/EPSG:4326/49.49667452747045/21.796875"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4271/8.0321"/>
+                      <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode_data:geonode:Lake_Viverone_366"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3245/7.90412"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4114/8.02564"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8305/8.58924"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9168/8.50401"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3231/7.91308"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0396/8.7314"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3229/7.9055"/>
+                      <sml:feature xlink:href="https://deims.org/8eda49e9-1f4e-4f3e-b58e-e0bb25dc32a6"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0097/8.71222"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3248/7.91127"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.7434/8.58281"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001469-SPN"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1625/8.83798"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4138/8.04503"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI000049-917"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1012/8.71904"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3257/7.91911"/>
+                      <sml:feature xlink:href="https://deims.org/270a41c4-33a8-4da6-9258-2ab10916f262"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0611/8.71722"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1491/8.74025"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3304/7.91835"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0746/8.69912"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9665/8.65647"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3262/7.90974"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9269/8.60705"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0006/8.66521"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8984/8.56262"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001241-S1"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI000328-UMO"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3289/7.91563"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI000049-1675"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8295/8.61533"/>
+                      <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode:LTER_EU_IT_045"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8894/8.54213"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001230-Lagdei"/>
+                      <sml:feature xlink:href="http://www.get-it.it/featureOfInterest/SI001241-E1"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4076/8.03769"/>
+                      <sml:feature xlink:href="http://getit.lteritalia.it/layers/geonode:LTER_EU_AT_003"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9193/8.52526"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4221/8.04144"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8551/8.57672"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4218/8.0267"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9301/8.58381"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.8705/8.58493"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.0003/8.72113"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/46.1462/8.83132"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.3274/7.91731"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.9547/8.63403"/>
+                      <sml:feature xlink:href="https://deims.org/92fd6fad-99cd-4972-93bd-c491f0be1301"/>
+                      <sml:feature xlink:href="http://www.get-it.it/sensors/getit.lteritalia.it/sensors/foi/SSF/SP/4326/45.4078/8.04849"/>
+                    </sml:FeatureList>
+                  </sml:featuresOfInterest>
+                  <sml:attachedTo xlink:href="http://getit.lteritalia.it/observations/sos/kvp?request=DescribeSensor&amp;service=SOS&amp;version=2.0.0&amp;procedure=http://registry.get-it.it/sensors/systemsType/Vantage/Davis_Instruments/BE62542EAE3779425CA76390777943A5&amp;procedureDescriptionFormat=http%3A%2F%2Fwww.opengis.net%2Fsensorml%2F2.0" xlink:title="http://registry.get-it.it/sensors/systemsType/Vantage/Davis_Instruments/BE62542EAE3779425CA76390777943A5"/>
+                </sml:PhysicalComponent>
+              </sml:component>
+            </sml:ComponentList>
+          </sml:components>
+        </sml:PhysicalSystem>
+      </swes:data>
+    </swes:SensorDescription>
+  </swes:description>
+</swes:DescribeSensorResponse>
