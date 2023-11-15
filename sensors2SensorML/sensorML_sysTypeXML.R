@@ -189,7 +189,11 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
   
   # sml:characteristics
   # sml:characteristics - physicalProperties
-  if (!is.na(sensor_system$material)|!is.na(sensor_system$weight)|!is.na(sensor_system$height)|!is.na(sensor_system$width)|!is.na(sensor_system$length)) {
+  if (!is.na(sensor_system$material) |
+      !is.na(sensor_system$weight) |
+      !is.na(sensor_system$height) |
+      !is.na(sensor_system$width) |
+      !is.na(sensor_system$length)) {
     f <- xml2::xml_add_child(c, "sml:characteristics", "name" = "characteristics") %>%
       xml2::xml_add_child(., "sml:CharacteristicList")
     f1 <- xml2::xml_add_child(f, "sml:characteristic", "name" = "physicalProperties") %>%
@@ -231,16 +235,18 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
         xml2::xml_add_sibling(., "swe:value", sensor_system$height)
     }
   }
-  
   # sml:characteristics - electricalRequirements
-  if (!is.na(sensor_system$electrical_current_type)|!is.na(sensor_system$input_power_range)|!is.na(sensor_system$battery_charging_current)|!is.na(sensor_system$battery_output)) {
+  if (!is.na(sensor_system$electrical_current_type) |
+      !is.na(sensor_system$input_power_range) |
+      !is.na(sensor_system$battery_charging_current) |
+      !is.na(sensor_system$battery_output)) {
     f2 <- xml2::xml_add_child(f, "sml:characteristic", "name" = "electricalRequirements") %>%
       xml2::xml_add_child(., "swe:DataRecord")
     # sml:characteristics - electricalRequirements - ElectricalCurrentType
     if (!is.na(sensor_system$electrical_current_type)) {
       xml2::xml_add_child(f2, "swe:field", "name" = "ElectricalCurrentType") %>%
-        xml2::xml_add_child(., "swe:Category", "definition" = "http://vocab.nerc.ac.uk/collection/W05/current/CHAR0009/") %>%
-        xml2::xml_add_child(., "swe:value", sensor_system$electrical_current_type)
+        xml2::xml_add_child(., "swe:Text", "definition" = "http://vocab.nerc.ac.uk/collection/W05/current/CHAR0009/") %>%
+        xml2::xml_add_child(., "swe:description", sensor_system$electrical_current_type)
     }
     # sml:characteristics - electricalRequirements - InputPowerRange
     if (!is.na(sensor_system$input_power_range)) {
@@ -251,15 +257,15 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
     }
     # sml:characteristics - electricalRequirements - BatteryChargingCurrent
     if (!is.na(sensor_system$battery_charging_current)) {
-      if (!is.na(as.numeric(sensor_system$battery_charging_current))) {
+      if (grepl("\\s+", sensor_system$battery_charging_current)) {
         xml2::xml_add_child(f2, "swe:field", "name" = "BatteryChargingCurrent") %>%
-          xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/MVB/current/MVB000064/") %>%
+          xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/MVB/current/MVB000064/") %>%
           xml2::xml_add_child(., "swe:uom", "code" = "mA", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/UMAM/") %>%
           xml2::xml_add_sibling(., "swe:value", sensor_system$battery_charging_current)
       } else {
-        if (grepl("\\s+", sensor_system$battery_charging_current)) {
+        if (grepl("[0-9]", sensor_system$battery_charging_current)) {
           xml2::xml_add_child(f2, "swe:field", "name" = "BatteryChargingCurrent") %>%
-            xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/MVB/current/MVB000064/") %>%
+            xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/MVB/current/MVB000064/") %>%
             xml2::xml_add_child(., "swe:uom", "code" = "mA", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/UMAM/") %>%
             xml2::xml_add_sibling(., "swe:value", sensor_system$battery_charging_current)
         } else {
@@ -270,16 +276,16 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
       }
     }
     # sml:characteristics - electricalRequirements - BatteryOutput
-    if (is.na(sensor_system$battery_output)) {
-      if (!is.na(as.numeric(sensor_system$battery_output))) {
+    if (!is.na(sensor_system$battery_output)) {
+      if (grepl("\\s+", sensor_system$battery_output)) {
         xml2::xml_add_child(f2, "swe:field", "name" = "BatteryOutput") %>%
-          xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/S29/current/PE001260/") %>%
+          xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/S29/current/PE001260/") %>%
           xml2::xml_add_child(., "swe:uom", "code" = "V", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/UVLT/") %>%
           xml2::xml_add_sibling(., "swe:value", sensor_system$battery_output)
       } else {
-        if (grepl("\\s+", sensor_system$battery_output)) {
+        if (grepl("[0-9]", sensor_system$battery_output)) {
           xml2::xml_add_child(f2, "swe:field", "name" = "BatteryOutput") %>%
-            xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/S29/current/PE001260/") %>%
+            xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/S29/current/PE001260/") %>%
             xml2::xml_add_child(., "swe:uom", "code" = "V", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/UVLT/") %>%
             xml2::xml_add_sibling(., "swe:value", sensor_system$battery_output)
         } else {
@@ -291,7 +297,9 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
     }
   }
   # sml:characteristics - dataSpecifications
-  if (!is.na(sensor_system$data_storage_type)|!is.na(sensor_system$data_storage)|!is.na(sensor_system$data_format)) {
+  if (!is.na(sensor_system$data_storage_type) |
+      !is.na(sensor_system$data_storage) |
+      !is.na(sensor_system$data_format)) {
     f3 <- xml2::xml_add_child(f, "sml:characteristic", "name" = "dataSpecifications") %>%
       xml2::xml_add_child(., "swe:DataRecord")
     # sml:characteristics - dataSpecifications - DataStorageType
@@ -327,184 +335,194 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
   }
   
   # sml:capabilities
-  g <- xml2::xml_add_child(c, "sml:capabilities", "name" = "capabilities") %>%
-    xml2::xml_add_child(., "sml:CapabilityList")
-  # for SPARQL query
-  ireaEndpoint <- "http://fuseki1.get-it.it/directory/query"
-  uom_query_I_part <- "PREFIX owl: <http://www.w3.org/2002/07/owl#>
-  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  SELECT ?c ?l ?s
-  WHERE {
-    SERVICE <http://vocab.nerc.ac.uk/sparql/sparql> {
-      ?c rdf:type skos:Concept .
-      <http://vocab.nerc.ac.uk/collection/P06/current/> skos:member ?c .
-      OPTIONAL {
-        ?c skos:altLabel ?l .
-        ?c owl:sameAs ?s .
-      }
-      FILTER( REGEX( STR(?l), '"
-  uom_query_II_part <- "', 'i'))
-       }
-      }
-      ORDER BY ASC(?l)
-      LIMIT 1"
-  # sml:capabilities - Accuracy
-  if (!is.na(sensor_system$accuracy)) {
-    uom_nerc_query <- paste0(
-      uom_query_I_part,
-      sensor_system$accuracy_uom,
-      uom_query_II_part
-    )
-    nercUOM <- httr2::request(ireaEndpoint) %>%
-      httr2::req_url_query(query = uom_nerc_query) %>%
-      httr2::req_method("POST") %>%
-      httr2::req_headers(Accept = "application/sparql-results+json") %>%
-      httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
-      httr2::req_perform()
-    httr2::resp_check_status(nercUOM)
-    nercUOM_JSON <- httr2::resp_body_json(nercUOM)
-    accuracy_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
-    if (!is.na(as.numeric(sensor_system$accuracy))) {
-      xml2::xml_add_child(g, "sml:capability", "name" = "Accuracy") %>%
-        xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0001/") %>%
-        xml2::xml_add_child(., "swe:uom", "code" = sensor_system$accuracy_uom, "xlink:href" = accuracy_uom_def) %>%
-        xml2::xml_add_sibling(., "swe:value", sensor_system$accuracy)
-    } else {
+  if (!is.na(sensor_system$accuracy) |
+      !is.na(sensor_system$measurement_range) |
+      !is.na(sensor_system$operating_depth) |
+      !is.na(sensor_system$precision) |
+      !is.na(sensor_system$resolution) |
+      !is.na(sensor_system$sensitivity) |
+      !is.na(sensor_system$minimum_reporting_frequency) |
+      !is.na(sensor_system$mobile) |
+      !is.na(sensor_system$insitu)) {
+    g <- xml2::xml_add_child(c, "sml:capabilities", "name" = "capabilities") %>%
+      xml2::xml_add_child(., "sml:CapabilityList")
+    # for SPARQL query
+    ireaEndpoint <- "http://fuseki1.get-it.it/directory/query"
+    uom_query_I_part <- "PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT ?c ?l ?s
+    WHERE {
+      SERVICE <http://vocab.nerc.ac.uk/sparql/sparql> {
+        ?c rdf:type skos:Concept .
+        <http://vocab.nerc.ac.uk/collection/P06/current/> skos:member ?c .
+        OPTIONAL {
+          ?c skos:altLabel ?l .
+          ?c owl:sameAs ?s .
+        }
+        FILTER( REGEX( STR(?l), '"
+    uom_query_II_part <- "', 'i'))
+         }
+        }
+        ORDER BY ASC(?l)
+        LIMIT 1"
+    # sml:capabilities - Accuracy
+    if (!is.na(sensor_system$accuracy)) {
+      uom_nerc_query <- paste0(
+        uom_query_I_part,
+        sensor_system$accuracy_uom,
+        uom_query_II_part
+      )
+      nercUOM <- httr2::request(ireaEndpoint) %>%
+        httr2::req_url_query(query = uom_nerc_query) %>%
+        httr2::req_method("POST") %>%
+        httr2::req_headers(Accept = "application/sparql-results+json") %>%
+        httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
+        httr2::req_perform()
+      httr2::resp_check_status(nercUOM)
+      nercUOM_JSON <- httr2::resp_body_json(nercUOM)
+      accuracy_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
       if (grepl("\\s+", sensor_system$accuracy)) {
         xml2::xml_add_child(g, "sml:capability", "name" = "Accuracy") %>%
           xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0001/") %>%
           xml2::xml_add_child(., "swe:uom", "code" = sensor_system$accuracy_uom, "xlink:href" = accuracy_uom_def) %>%
           xml2::xml_add_sibling(., "swe:value", sensor_system$accuracy)
       } else {
-        xml2::xml_add_child(g, "sml:capability", "name" = "Accuracy") %>%
-          xml2::xml_add_child(., "swe:Text", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0001/") %>%
-          xml2::xml_add_sibling(., "swe:value", sensor_system$accuracy)
+        if (grepl("[0-9]", sensor_system$accuracy)) {
+          xml2::xml_add_child(g, "sml:capability", "name" = "Accuracy") %>%
+            xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0001/") %>%
+            xml2::xml_add_child(., "swe:uom", "code" = sensor_system$accuracy_uom, "xlink:href" = accuracy_uom_def) %>%
+            xml2::xml_add_sibling(., "swe:value", sensor_system$accuracy)
+        } else {
+          xml2::xml_add_child(g, "sml:capability", "name" = "Accuracy") %>%
+            xml2::xml_add_child(., "swe:Text", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0001/") %>%
+            xml2::xml_add_sibling(., "swe:value", sensor_system$accuracy)
+        }
       }
     }
-  }
-  # sml:capabilities - MeasurementRange
-  if (!is.na(sensor_system$measurement_range)) {
-    uom_nerc_query <- paste0(
-      uom_query_I_part,
-      sensor_system$measurement_range_uom,
-      uom_query_II_part
-    )
-    nercUOM <- httr2::request(ireaEndpoint) %>%
-      httr2::req_url_query(query = uom_nerc_query) %>%
-      httr2::req_method("POST") %>%
-      httr2::req_headers(Accept = "application/sparql-results+json") %>%
-      httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
-      httr2::req_perform()
-    httr2::resp_check_status(nercUOM)
-    nercUOM_JSON <- httr2::resp_body_json(nercUOM)
-    measurement_range_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
-    xml2::xml_add_child(g, "sml:capability", "name" = "MeasurementRange") %>%
-      xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0006/") %>%
-      xml2::xml_add_child(., "swe:uom", "code" = sensor_system$measurement_range_uom, "xlink:href" = measurement_range_uom_def) %>%
-      xml2::xml_add_sibling(., "swe:value", sensor_system$measurement_range)
-  }
-  # sml:capabilities - OperatingDepth
-  if (!is.na(sensor_system$operating_depth)) {
-    xml2::xml_add_child(g, "sml:capability", "name" = "OperatingDepth") %>%
-      xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0012/") %>%
-      xml2::xml_add_child(., "swe:uom", "code" = "m", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/") %>%
-      xml2::xml_add_sibling(., "swe:value", sensor_system$operating_depth)
-  }
-  # sml:capabilities - Precision
-  if (!is.na(sensor_system$precision)) {
-    uom_nerc_query <- paste0(
-      uom_query_I_part,
-      sensor_system$precision_uom,
-      uom_query_II_part
-    )
-    nercUOM <- httr2::request(ireaEndpoint) %>%
-      httr2::req_url_query(query = uom_nerc_query) %>%
-      httr2::req_method("POST") %>%
-      httr2::req_headers(Accept = "application/sparql-results+json") %>%
-      httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
-      httr2::req_perform()
-    httr2::resp_check_status(nercUOM)
-    nercUOM_JSON <- httr2::resp_body_json(nercUOM)
-    precision_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
-    xml2::xml_add_child(g, "sml:capability", "name" = "Precision") %>%
-      xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0005/") %>%
-      xml2::xml_add_child(., "swe:uom", "code" = sensor_system$precision_uom, "xlink:href" = precision_uom_def) %>%
-      xml2::xml_add_sibling(., "swe:value", sensor_system$precision)
-  }
-  # sml:capabilities - Resolution
-  if (!is.na(sensor_system$resolution)) {
-    uom_nerc_query <- paste0(
-      uom_query_I_part,
-      sensor_system$accuracy_uom,
-      uom_query_II_part
-    )
-    nercUOM <- httr2::request(ireaEndpoint) %>%
-      httr2::req_url_query(query = uom_nerc_query) %>%
-      httr2::req_method("POST") %>%
-      httr2::req_headers(Accept = "application/sparql-results+json") %>%
-      httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
-      httr2::req_perform()
-    httr2::resp_check_status(nercUOM)
-    nercUOM_JSON <- httr2::resp_body_json(nercUOM)
-    accuracy_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
-    if (!is.na(as.numeric(sensor_system$resolution))) {
-      xml2::xml_add_child(g, "sml:capability", "name" = "Resolution") %>%
-        xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0007/") %>%
-        xml2::xml_add_child(., "swe:uom", "code" = sensor_system$resolution_uom, "xlink:href" = sensor_system$resolution_uom_def) %>%
-        xml2::xml_add_sibling(., "swe:value", sensor_system$resolution)
-    } else {
+    # sml:capabilities - MeasurementRange
+    if (!is.na(sensor_system$measurement_range)) {
+      uom_nerc_query <- paste0(
+        uom_query_I_part,
+        sensor_system$measurement_range_uom,
+        uom_query_II_part
+      )
+      nercUOM <- httr2::request(ireaEndpoint) %>%
+        httr2::req_url_query(query = uom_nerc_query) %>%
+        httr2::req_method("POST") %>%
+        httr2::req_headers(Accept = "application/sparql-results+json") %>%
+        httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
+        httr2::req_perform()
+      httr2::resp_check_status(nercUOM)
+      nercUOM_JSON <- httr2::resp_body_json(nercUOM)
+      measurement_range_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
+      xml2::xml_add_child(g, "sml:capability", "name" = "MeasurementRange") %>%
+        xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0006/") %>%
+        xml2::xml_add_child(., "swe:uom", "code" = sensor_system$measurement_range_uom, "xlink:href" = measurement_range_uom_def) %>%
+        xml2::xml_add_sibling(., "swe:value", sensor_system$measurement_range)
+    }
+    # sml:capabilities - OperatingDepth
+    if (!is.na(sensor_system$operating_depth)) {
+      xml2::xml_add_child(g, "sml:capability", "name" = "OperatingDepth") %>%
+        xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0012/") %>%
+        xml2::xml_add_child(., "swe:uom", "code" = "m", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/") %>%
+        xml2::xml_add_sibling(., "swe:value", sensor_system$operating_depth)
+    }
+    # sml:capabilities - Precision
+    if (!is.na(sensor_system$precision)) {
+      uom_nerc_query <- paste0(
+        uom_query_I_part,
+        sensor_system$precision_uom,
+        uom_query_II_part
+      )
+      nercUOM <- httr2::request(ireaEndpoint) %>%
+        httr2::req_url_query(query = uom_nerc_query) %>%
+        httr2::req_method("POST") %>%
+        httr2::req_headers(Accept = "application/sparql-results+json") %>%
+        httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
+        httr2::req_perform()
+      httr2::resp_check_status(nercUOM)
+      nercUOM_JSON <- httr2::resp_body_json(nercUOM)
+      precision_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
+      xml2::xml_add_child(g, "sml:capability", "name" = "Precision") %>%
+        xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0005/") %>%
+        xml2::xml_add_child(., "swe:uom", "code" = sensor_system$precision_uom, "xlink:href" = precision_uom_def) %>%
+        xml2::xml_add_sibling(., "swe:value", sensor_system$precision)
+    }
+    # sml:capabilities - Resolution
+    if (!is.na(sensor_system$resolution)) {
+      uom_nerc_query <- paste0(
+        uom_query_I_part,
+        sensor_system$accuracy_uom,
+        uom_query_II_part
+      )
+      nercUOM <- httr2::request(ireaEndpoint) %>%
+        httr2::req_url_query(query = uom_nerc_query) %>%
+        httr2::req_method("POST") %>%
+        httr2::req_headers(Accept = "application/sparql-results+json") %>%
+        httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
+        httr2::req_perform()
+      httr2::resp_check_status(nercUOM)
+      nercUOM_JSON <- httr2::resp_body_json(nercUOM)
+      accuracy_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
       if (grepl("\\s+", sensor_system$resolution)) {
         xml2::xml_add_child(g, "sml:capability", "name" = "Resolution") %>%
           xml2::xml_add_child(., "swe:QuantityRange", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0007/") %>%
           xml2::xml_add_child(., "swe:uom", "code" = sensor_system$resolution_uom, "xlink:href" = sensor_system$resolution_uom_def) %>%
           xml2::xml_add_sibling(., "swe:value", sensor_system$resolution)
       } else {
-        xml2::xml_add_child(g, "sml:capability", "name" = "Resolution") %>%
-          xml2::xml_add_child(., "swe:Text", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0007/") %>%
-          xml2::xml_add_sibling(., "swe:value", sensor_system$resolution)
+        if (grepl("[0-9]", sensor_system$resolution)) {
+          xml2::xml_add_child(g, "sml:capability", "name" = "Resolution") %>%
+            xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0007/") %>%
+            xml2::xml_add_child(., "swe:uom", "code" = sensor_system$resolution_uom, "xlink:href" = sensor_system$resolution_uom_def) %>%
+            xml2::xml_add_sibling(., "swe:value", sensor_system$resolution)
+        } else {
+          xml2::xml_add_child(g, "sml:capability", "name" = "Resolution") %>%
+            xml2::xml_add_child(., "swe:Text", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0007/") %>%
+            xml2::xml_add_sibling(., "swe:value", sensor_system$resolution)
+        }
       }
     }
-  }
-  # sml:capabilities - Sensitivity
-  if (!is.na(sensor_system$sensitivity)) {
-    uom_nerc_query <- paste0(
-      uom_query_I_part,
-      sensor_system$sensitivity_uom,
-      uom_query_II_part
-    )
-    nercUOM <- httr2::request(ireaEndpoint) %>%
-      httr2::req_url_query(query = uom_nerc_query) %>%
-      httr2::req_method("POST") %>%
-      httr2::req_headers(Accept = "application/sparql-results+json") %>%
-      httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
-      httr2::req_perform()
-    httr2::resp_check_status(nercUOM)
-    nercUOM_JSON <- httr2::resp_body_json(nercUOM)
-    sensitivity_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
-    xml2::xml_add_child(g, "sml:capability", "name" = "Sensitivity") %>%
-      xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0009/") %>%
-      xml2::xml_add_child(., "swe:uom", "code" = sensor_system$sensitivity_uom, "xlink:href" = sensitivity_uom_def) %>%
-      xml2::xml_add_sibling(., "swe:value", sensor_system$sensitivity)
-  }
-  # sml:capabilities - MinimumReportingFrequency
-  if (!is.na(sensor_system$minimum_reporting_frequency)) {
-    xml2::xml_add_child(g, "sml:capability", "name" = "MinimumReportingFrequency") %>%
-      xml2::xml_add_child(., "swe:Quantity", "definition" = "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMFrequency") %>%
-      xml2::xml_add_child(., "swe:uom", "code" = "s", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/UTBB/") %>%
-      xml2::xml_add_sibling(., "swe:value", sensor_system$minimum_reporting_frequency)
-  }
-  # sml:capabilities - Mobile
-  if (!is.na(sensor_system$mobile)) {
-    xml2::xml_add_child(g, "sml:capability", "name" = "Mobile") %>%
-      xml2::xml_add_child(., "swe:Boolean") %>%
-      xml2::xml_add_child(., "swe:value", tolower(sensor_system$mobile))
-  }
-  # sml:capabilities - Insitu
-  if (!is.na(sensor_system$insitu)) {
-    xml2::xml_add_child(g, "sml:capability", "name" = "Insitu") %>%
-      xml2::xml_add_child(., "swe:Boolean") %>%
-      xml2::xml_add_child(., "swe:value", tolower(sensor_system$insitu))
+    # sml:capabilities - Sensitivity
+    if (!is.na(sensor_system$sensitivity)) {
+      uom_nerc_query <- paste0(
+        uom_query_I_part,
+        sensor_system$sensitivity_uom,
+        uom_query_II_part
+      )
+      nercUOM <- httr2::request(ireaEndpoint) %>%
+        httr2::req_url_query(query = uom_nerc_query) %>%
+        httr2::req_method("POST") %>%
+        httr2::req_headers(Accept = "application/sparql-results+json") %>%
+        httr2::req_retry(max_tries = 3, max_seconds = 120) %>%
+        httr2::req_perform()
+      httr2::resp_check_status(nercUOM)
+      nercUOM_JSON <- httr2::resp_body_json(nercUOM)
+      sensitivity_uom_def <- nercUOM_JSON$results$bindings[[1]]$c$value
+      xml2::xml_add_child(g, "sml:capability", "name" = "Sensitivity") %>%
+        xml2::xml_add_child(., "swe:Quantity", "definition" = "http://vocab.nerc.ac.uk/collection/W04/current/CAPB0009/") %>%
+        xml2::xml_add_child(., "swe:uom", "code" = sensor_system$sensitivity_uom, "xlink:href" = sensitivity_uom_def) %>%
+        xml2::xml_add_sibling(., "swe:value", sensor_system$sensitivity)
+    }
+    # sml:capabilities - MinimumReportingFrequency
+    if (!is.na(sensor_system$minimum_reporting_frequency)) {
+      xml2::xml_add_child(g, "sml:capability", "name" = "MinimumReportingFrequency") %>%
+        xml2::xml_add_child(., "swe:Quantity", "definition" = "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMFrequency") %>%
+        xml2::xml_add_child(., "swe:uom", "code" = "s", "xlink:href" = "http://vocab.nerc.ac.uk/collection/P06/current/UTBB/") %>%
+        xml2::xml_add_sibling(., "swe:value", sensor_system$minimum_reporting_frequency)
+    }
+    # sml:capabilities - Mobile
+    if (!is.na(sensor_system$mobile)) {
+      xml2::xml_add_child(g, "sml:capability", "name" = "Mobile") %>%
+        xml2::xml_add_child(., "swe:Boolean") %>%
+        xml2::xml_add_child(., "swe:value", tolower(sensor_system$mobile))
+    }
+    # sml:capabilities - Insitu
+    if (!is.na(sensor_system$insitu)) {
+      xml2::xml_add_child(g, "sml:capability", "name" = "Insitu") %>%
+        xml2::xml_add_child(., "swe:Boolean") %>%
+        xml2::xml_add_child(., "swe:value", tolower(sensor_system$insitu))
+    }
   }
   
   # sml:contacts
@@ -532,12 +550,12 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
     manufacturer_rdf <- manufacturer_JSON$results$bindings[[1]]$c$value
     h <- xml2::xml_add_child(c, "sml:contacts") %>%
       xml2::xml_add_child(., "sml:ContactList")
-    xml2::xml_add_child(h, "sml:contact", "xlink:title" = sensor_system$manufacturer, "xlink:href" = manufacturer_rdf) %>%
+    xml2::xml_add_child(h, "sml:contact", "xlink:title" = "manufacturer", "xlink:href" = manufacturer_rdf) %>%
       xml2::xml_add_child(., "gmd:CI_ResponsibleParty") %>%
       xml2::xml_add_child(., "gmd:role") %>%
       xml2::xml_add_child(., "gmd:CI_RoleCode",
                           "codeList" = "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode/",
-                          "codeListValue" = "originator", sensor_system$manufacturer
+                          "codeListValue" = "originator", "manufacturer"
       )
   }
   
@@ -580,16 +598,16 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
       manufacturer = "manufacturer"
     }
     components_name <- paste(
+      "ID_component_",
+      uuids_components,
+      sep = ""
+    )
+    components_xlink_href <- paste(
       paste0(
         "http://registry.get-it.it/sensors/componentsType/",
         model_name, "/",
         manufacturer, "/"
       ),
-      uuids_components,
-      sep = ""
-    )
-    components_xlink_href <- paste(
-      "ID_component_",
       uuids_components,
       sep = ""
     )
@@ -602,7 +620,9 @@ sensorML_sysTypeXML <- function(sensorList, uuidsList) {
       )
     }
     
-  #   # swes:observableProperty
+    # swes:observableProperty
+    xml2::xml_add_child(physicalSystemType_XML_base, "swes:observableProperty", "not_defined")
+    # In case of obsProps in sensor component(s) is fill remove the comment above
   #   components_info <- sensorList %>%
   #     dplyr::filter(sensor_level == 'component')
   #   list_obsProp <- components_info$observed_property

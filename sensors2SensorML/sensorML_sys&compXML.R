@@ -3,9 +3,9 @@ sensors_Catalogue <- function(csv_path = NULL) {
   # read csv file ----
   csv_file <- vroom::vroom(csv_path, ",", escape_double = FALSE, trim_ws = TRUE)
   # lines concerning examples, units of measurement and data types are removed ----
-  csv_file <- csv_file[c(-1:10),]
+  # csv_file <- csv_file[c(-1:10),]
   # if only example sensor ----
-  # csv_file <- csv_file[c(-1, -2),]
+  csv_file <- csv_file[c(-1, -2),]
   # delete row without sensor or components info ----
   csv_file <- dplyr::filter(csv_file, rowSums(is.na(csv_file)) != ncol(csv_file))
   # group by sensor name ----
@@ -30,20 +30,20 @@ sensors_Catalogue <- function(csv_path = NULL) {
     # In addition in SOSA or SSN it is not possible to have the hierarchy and discriminate between sensor type and sensor instance.
     # So, I think we need to produce the transformation for sensor instances only. How can this be done? How is it possible to take
     # all the XML type information (system, component and instance) and transform it into TTL?
-    if (dir.exists(root_dir)) {
-      if (nrow(sensor) > 1 && 'component' %in% sensor$sensor_level) {
-        sensorMLType2rdf(
-          file_folder = paste0(getwd(), "/", root_dir, "/system/")
-        )
-        sensorMLType2rdf(
-          file_folder = paste0(getwd(), "/", root_dir, "/components/")
-        )
-      } else { # nrow(sensor) = 1
-        sensorMLType2rdf(
-          file_folder = paste0(getwd(), "/", root_dir, "/system/")
-        )
-      }
-    }
+    # if (dir.exists(root_dir)) {
+    #   if (nrow(sensor) > 1 && 'component' %in% sensor$sensor_level) {
+    #     sensorMLType2rdf(
+    #       file_folder = paste0(getwd(), "/", root_dir, "/system/")
+    #     )
+    #     sensorMLType2rdf(
+    #       file_folder = paste0(getwd(), "/", root_dir, "/components/")
+    #     )
+    #   } else { # nrow(sensor) = 1
+    #     sensorMLType2rdf(
+    #       file_folder = paste0(getwd(), "/", root_dir, "/system/")
+    #     )
+    #   }
+    # }
   }
 }
 # TODO a direct CURL could also be made to the SOS and the fuseki triplestore
