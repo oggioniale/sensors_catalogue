@@ -53,3 +53,5 @@ sensorML_type_rdf(files_path = "./sensorML_files_system_4ce8484c-b9e1-11ee-98e3-
 # 5. use sensorML_instance_rdf() function for obtain ttl version of sensor instance shared in SOS system.
 # this function is in the TODO list 
 ```
+The production flow is illustrated in the figure:
+<img width="766" alt="image" src="https://github.com/oggioniale/sensors_catalogue/assets/1393893/ebcf4adc-d9c5-452d-a18d-ef2e50f9c5d2">
