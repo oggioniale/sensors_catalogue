@@ -1,0 +1,32 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        @prefix sosa: <http://www.w3.org/ns/sosa/>
+        @prefix ssn: <http://www.w3.org/ns/ssn/>
+        @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/>
+        @prefix foaf: <http://xmlns.com/foaf/0.1/>
+        @prefix owl: <http://www.w3.org/2002/07/owl#>
+        @prefix dcat: <http://www.w3.org/ns/dcat#>
+        @prefix prov: <http://www.w3.org/ns/prov#>
+        @prefix schema: <http://schema.org/>
+<http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3>
+       rdf:type               sosa:Sensor , ssn:System , prov:Entity ;
+       owl:sameAs             <http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/2750e3d5-7c16-4079-8e0e-c833ce545ce3> ;
+       rdfs:comment           'The Temperature sensor of Vantage Pro Wireless Weather Station'@en ;
+       rdfs:label             'Davis Vantage PRO Thermometer sensor'@en ;
+       sosa:isHostedBy             <http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3> ;
+ssn-system:hasSystemCapability <http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3#SensorCapability> .
+<http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3#SensorCapability> a ssn:Property , ssn-system:SystemCapability , schema:PropertyValue ;
+ssn-system:hasSystemProperty <http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3#SensorAccuracy>,<http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3#SensorFrequency> .
+
+<http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3#SensorAccuracy> a ssn:Property , ssn-system:Accuracy , schema:PropertyValue ;
+schema:value 0.5 ;
+schema:unitCode <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> .
+
+
+
+
+
+<http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3#SensorFrequency> a ssn:Property , ssn-system:Frequency , schema:PropertyValue ;
+schema:value 5 ;
+schema:unitCode <http://vocab.nerc.ac.uk/collection/P06/current/UTBB/> .
+

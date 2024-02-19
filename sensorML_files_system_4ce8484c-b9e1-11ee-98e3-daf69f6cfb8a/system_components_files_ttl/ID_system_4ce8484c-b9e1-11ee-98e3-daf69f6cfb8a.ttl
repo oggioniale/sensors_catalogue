@@ -1,0 +1,24 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    @prefix sosa: <http://www.w3.org/ns/sosa/>
+    @prefix ssn: <http://www.w3.org/ns/ssn/>
+    @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/>
+    @prefix foaf: <http://xmlns.com/foaf/0.1/>
+    @prefix owl: <http://www.w3.org/2002/07/owl#>
+    @prefix dcat: <http://www.w3.org/ns/dcat#>
+    @prefix prov: <http://www.w3.org/ns/prov#>
+    @prefix schema: <http://schema.org/>
+<http://rdfdata.get-it.it/sensors/systemsType/4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a>
+       rdf:type               sosa:Platform , ssn:System , prov:Entity ;
+       owl:sameAs             <http://registry.get-it.it/sensors/systemsType/Vantage/Davis_Instruments/4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a> ;
+       rdfs:comment           'The Vantage Pro Wireless Weather Station include two components: the Integrated Sensor Suite (ISS) which houses and manages the external sensor array; and the console which provides the user interface, data display, A/D conversion, and calculations. The ISS and Vantage Pro console communicate via an FCCcertified, licensefree transmitter and receiver. Userselectable DavisTalk ID codes allow up to eight stations to coexist in the same geographic area. The console may be powered by batteries or by the included ACpower adapter. The wireless ISS is solar powered with a battery backup. Use WeatherLInk for Vantage Pro to interface your weather station with a computer, to log weather data, and to upload weather information to the internet.'@en ;
+       rdfs:label             'Davis Vantage PRO'@en ;
+       dcat:contactPoint      [ rdf:type       prov:Organization , foaf:Organization ;                                rdfs:seeAlso   <http://rdfdata.get-it.it/sensors/manufacturers/170> ;                                foaf:name      'Davis Instruments'] ;
+       sosa:hosts             <http://rdfdata.get-it.it/sensors/componentsType/7b71b266-742d-4e88-b0ae-0bfc3e75db0c>, <http://rdfdata.get-it.it/sensors/componentsType/2750e3d5-7c16-4079-8e0e-c833ce545ce3>, <http://rdfdata.get-it.it/sensors/componentsType/90d7ca3b-adc9-4e11-b575-04a419bb117d>, <http://rdfdata.get-it.it/sensors/componentsType/80fadf22-b41b-443e-8791-501a0730fa7a>, <http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d>, <http://rdfdata.get-it.it/sensors/componentsType/141b9567-0b15-4716-a794-f137c097f8e9>, <http://rdfdata.get-it.it/sensors/componentsType/2893ca96-68d8-480f-877f-c913e6b41e16> ;
+
+
+       prov:wasDerivedFrom    <http://estacion.at.fcen.uba.ar/especificaciones.pdf> ;
+       sosa:observes             <not_defined> .
+
+
+

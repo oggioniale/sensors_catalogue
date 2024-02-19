@@ -1,0 +1,32 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        @prefix sosa: <http://www.w3.org/ns/sosa/>
+        @prefix ssn: <http://www.w3.org/ns/ssn/>
+        @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/>
+        @prefix foaf: <http://xmlns.com/foaf/0.1/>
+        @prefix owl: <http://www.w3.org/2002/07/owl#>
+        @prefix dcat: <http://www.w3.org/ns/dcat#>
+        @prefix prov: <http://www.w3.org/ns/prov#>
+        @prefix schema: <http://schema.org/>
+<http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d>
+       rdf:type               sosa:Sensor , ssn:System , prov:Entity ;
+       owl:sameAs             <http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/e3f6b3ff-97f0-4d94-8cd7-79b96802273d> ;
+       rdfs:comment           'The Wind Speed sensor of Vantage Pro Wireless Weather Station'@en ;
+       rdfs:label             'Davis Vantage PRO Anemometer sensor 2'@en ;
+       sosa:isHostedBy             <http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d> ;
+ssn-system:hasSystemCapability <http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d#SensorCapability> .
+<http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d#SensorCapability> a ssn:Property , ssn-system:SystemCapability , schema:PropertyValue ;
+ssn-system:hasSystemProperty <http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d#SensorAccuracy>,<http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d#SensorFrequency> .
+
+<http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d#SensorAccuracy> a ssn:Property , ssn-system:Accuracy , schema:PropertyValue ;
+schema:value 1 ;
+schema:unitCode <http://vocab.nerc.ac.uk/collection/P06/current/UVAA/> .
+
+
+
+
+
+<http://rdfdata.get-it.it/sensors/componentsType/e3f6b3ff-97f0-4d94-8cd7-79b96802273d#SensorFrequency> a ssn:Property , ssn-system:Frequency , schema:PropertyValue ;
+schema:value 5 ;
+schema:unitCode <http://vocab.nerc.ac.uk/collection/P06/current/UTBB/> .
+

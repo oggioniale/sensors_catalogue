@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--?xml-stylesheet href="../../SensorML2HTML/sensor2html_systemType.xsl" type="text/xsl"?-->
+<swes:InsertSensor xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" service="SOS" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sosInsertSensor.xsd http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swes.xsd">
+  <swes:extension>
+    <swe:Boolean definition="isType">
+      <swe:value>true</swe:value>
+    </swe:Boolean>
+  </swes:extension>
+  <swes:procedureDescriptionFormat>http://www.opengis.net/sensorml/2.0</swes:procedureDescriptionFormat>
+  <swes:procedureDescription>
+    <sml:PhysicalSystem xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="ID_system_4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a" xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+      <gml:description>The Vantage Pro Wireless Weather Station include two components: the Integrated Sensor Suite (ISS) which houses and manages the external sensor array; and the console which provides the user interface, data display, A/D conversion, and calculations. The ISS and Vantage Pro console communicate via an FCCcertified, licensefree transmitter and receiver. Userselectable DavisTalk ID codes allow up to eight stations to coexist in the same geographic area. The console may be powered by batteries or by the included ACpower adapter. The wireless ISS is solar powered with a battery backup. Use WeatherLInk for Vantage Pro to interface your weather station with a computer, to log weather data, and to upload weather information to the internet.</gml:description>
+      <gml:identifier codeSpace="uniqueID">http://registry.get-it.it/sensors/systemsType/Vantage/Davis_Instruments/4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a</gml:identifier>
+      <gml:name>Davis Vantage PRO</gml:name>
+      <sml:keywords>
+        <sml:KeywordList>
+          <sml:keyword>Itineris</sml:keyword>
+          <sml:keyword>PNRR</sml:keyword>
+          <sml:keyword>Sensor Catalogue</sml:keyword>
+          <sml:keyword>Sensors</sml:keyword>
+          <sml:keyword>eLTER</sml:keyword>
+        </sml:KeywordList>
+      </sml:keywords>
+      <sml:identification>
+        <sml:IdentifierList>
+          <sml:identifier>
+            <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0008/">
+              <sml:label>uniqueID</sml:label>
+              <sml:value>http://registry.get-it.it/sensors/systemsType/Vantage/Davis_Instruments/4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a</sml:value>
+            </sml:Term>
+          </sml:identifier>
+          <sml:identifier>
+            <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0006/">
+              <sml:label>shortName</sml:label>
+              <sml:value>Vantage Pro</sml:value>
+            </sml:Term>
+          </sml:identifier>
+          <sml:identifier>
+            <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0012/">
+              <sml:label>Manufacturer</sml:label>
+              <sml:value>Davis Instruments</sml:value>
+            </sml:Term>
+          </sml:identifier>
+          <sml:identifier>
+            <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0003/">
+              <sml:label>Model Name</sml:label>
+              <sml:value>Vantage</sml:value>
+            </sml:Term>
+          </sml:identifier>
+          <sml:identifier>
+            <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0002/">
+              <sml:label>longName</sml:label>
+              <sml:value>Wireless Vantage Pro Station</sml:value>
+            </sml:Term>
+          </sml:identifier>
+          <sml:identifier>
+            <sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0013/">
+              <sml:label>Version</sml:label>
+              <sml:value>Pro</sml:value>
+            </sml:Term>
+          </sml:identifier>
+        </sml:IdentifierList>
+      </sml:identification>
+      <sml:classification>
+        <sml:ClassifierList>
+          <sml:classifier>
+            <sml:Term definition="http://www.opengis.net/def/property/OGC/0/SensorType">
+              <sml:label>Automated Weather System</sml:label>
+              <sml:value>http://vocab.nerc.ac.uk/collection/P10/current/GI000071/</sml:value>
+            </sml:Term>
+          </sml:classifier>
+        </sml:ClassifierList>
+      </sml:classification>
+      <sml:characteristics name="characteristics">
+        <sml:CharacteristicList>
+          <sml:characteristic name="physicalProperties">
+            <swe:DataRecord>
+              <swe:field name="PhysicalProperties">
+                <swe:DataRecord>
+                  <swe:field name="Material">
+                    <swe:Text definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0005/">
+                      <swe:description>UVresistant ABS plastic</swe:description>
+                    </swe:Text>
+                  </swe:field>
+                  <swe:field name="Weight">
+                    <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0001/">
+                      <swe:uom code="kg" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/KGXX/"/>
+                      <swe:value>0.85</swe:value>
+                    </swe:Quantity>
+                  </swe:field>
+                  <swe:field name="Length">
+                    <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0002/">
+                      <swe:uom code="mm" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"/>
+                      <swe:value>38</swe:value>
+                    </swe:Quantity>
+                  </swe:field>
+                  <swe:field name="Width">
+                    <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0004/">
+                      <swe:uom code="mm" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"/>
+                      <swe:value>156</swe:value>
+                    </swe:Quantity>
+                  </swe:field>
+                  <swe:field name="Height">
+                    <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0003/">
+                      <swe:uom code="mm" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"/>
+                      <swe:value>264</swe:value>
+                    </swe:Quantity>
+                  </swe:field>
+                </swe:DataRecord>
+              </swe:field>
+            </swe:DataRecord>
+          </sml:characteristic>
+          <sml:characteristic name="electricalRequirements">
+            <swe:DataRecord>
+              <swe:field name="ElectricalCurrentType">
+                <swe:Text definition="http://vocab.nerc.ac.uk/collection/W05/current/CHAR0009/">
+                  <swe:description>DC</swe:description>
+                </swe:Text>
+              </swe:field>
+              <swe:field name="BatteryChargingCurrent">
+                <swe:Quantity definition="http://vocab.nerc.ac.uk/collection/MVB/current/MVB000064/">
+                  <swe:uom code="mA" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UMAM/"/>
+                  <swe:value>0.67</swe:value>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="BatteryOutput">
+                <swe:QuantityRange definition="http://vocab.nerc.ac.uk/collection/S29/current/PE001260/">
+                  <swe:uom code="V" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVLT/"/>
+                  <swe:value>4 6</swe:value>
+                </swe:QuantityRange>
+              </swe:field>
+            </swe:DataRecord>
+          </sml:characteristic>
+          <sml:characteristic name="dataSpecifications">
+            <swe:DataRecord>
+              <swe:field name="Dataformat">
+                <swe:Text>
+                  <swe:description>ASCII</swe:description>
+                </swe:Text>
+              </swe:field>
+            </swe:DataRecord>
+          </sml:characteristic>
+        </sml:CharacteristicList>
+      </sml:characteristics>
+      <sml:capabilities name="capabilities">
+        <sml:CapabilityList>
+          <sml:capability name="Mobile">
+            <swe:Boolean>
+              <swe:value>false</swe:value>
+            </swe:Boolean>
+          </sml:capability>
+          <sml:capability name="Insitu">
+            <swe:Boolean>
+              <swe:value>true</swe:value>
+            </swe:Boolean>
+          </sml:capability>
+        </sml:CapabilityList>
+      </sml:capabilities>
+      <sml:contacts>
+        <sml:ContactList>
+          <sml:contact xlink:title="manufacturer" xlink:href="http://rdfdata.get-it.it/sensors/manufacturers/170">
+            <gmd:CI_ResponsibleParty>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode/" codeListValue="originator">manufacturer</gmd:CI_RoleCode>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </sml:contact>
+        </sml:ContactList>
+      </sml:contacts>
+      <sml:documentation xlink:arcrole="datasheet">
+        <sml:DocumentList>
+          <sml:document>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>http://estacion.at.fcen.uba.ar/especificaciones.pdf</gmd:URL>
+              </gmd:linkage>
+            </gmd:CI_OnlineResource>
+          </sml:document>
+        </sml:DocumentList>
+      </sml:documentation>
+      <sml:components>
+        <sml:ComponentList>
+          <sml:component name="ID_component_7b71b266-742d-4e88-b0ae-0bfc3e75db0c" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/7b71b266-742d-4e88-b0ae-0bfc3e75db0c"/>
+          <sml:component name="ID_component_2750e3d5-7c16-4079-8e0e-c833ce545ce3" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/2750e3d5-7c16-4079-8e0e-c833ce545ce3"/>
+          <sml:component name="ID_component_90d7ca3b-adc9-4e11-b575-04a419bb117d" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/90d7ca3b-adc9-4e11-b575-04a419bb117d"/>
+          <sml:component name="ID_component_80fadf22-b41b-443e-8791-501a0730fa7a" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/80fadf22-b41b-443e-8791-501a0730fa7a"/>
+          <sml:component name="ID_component_e3f6b3ff-97f0-4d94-8cd7-79b96802273d" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/e3f6b3ff-97f0-4d94-8cd7-79b96802273d"/>
+          <sml:component name="ID_component_141b9567-0b15-4716-a794-f137c097f8e9" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/141b9567-0b15-4716-a794-f137c097f8e9"/>
+          <sml:component name="ID_component_2893ca96-68d8-480f-877f-c913e6b41e16" xlink:href="http://registry.get-it.it/sensors/componentsType/Vantage/Davis_Instruments/2893ca96-68d8-480f-877f-c913e6b41e16"/>
+        </sml:ComponentList>
+      </sml:components>
+    </sml:PhysicalSystem>
+  </swes:procedureDescription>
+  <swes:observableProperty>not_defined</swes:observableProperty>
+</swes:InsertSensor>
