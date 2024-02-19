@@ -16,7 +16,7 @@ source("sensors2SensorML/sensors_catalogue.R")
 source("SensorML2TTL/sensorML_type_rdf.R")
 
 # The workflow of this app is:
-# 1. fill the sensors.xlsx spreadsheet
+# 1. fill the sensors_template.xlsx spreadsheet
 
 # 2. check if the information about manufacturer is in triplestore fuseki (http://fuseki1.get-it.it/dataset.html?tab=query&ds=/manufacturers);
 # if it is not presents:
@@ -41,11 +41,11 @@ git2r::add(repo = repo, path = list.files(pattern = files))
 git2r::commit(repo = repo, message = "new manufacturers")
 setwd("../sensors_catalogue/")
 # TODO missing the push!
-#git2r::push(...)
+# git2r::push(...)
 # 2.2.4. open the terminal and execute git push
 
 # 3. use sensors_catalogue() function for obtain SensorML XML of system and, eventually, of components for all the sensors described in the excel file;
-sensors_catalogue(excel_path = "./sensors.xlsx")
+sensors_catalogue(excel_path = "./sensors_template.xlsx")
 
 # 4. use sensorML_type_rdf() function for obtain ttl of system and, eventually, of components starting from XML file (the output of sensors_catalogue() function);
 sensorML_type_rdf(files_path = "./sensorML_files_system_4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a/")
