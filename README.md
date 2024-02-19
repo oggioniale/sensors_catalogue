@@ -3,3 +3,4 @@ This includes solution to collect info about sensors (excel file), transform inf
 
 
 Compliant also with [PIDINST schema](https://docs.pidinst.org/en/latest/white-paper/metadata-schema.html) and, trougth this, with DataCite Metadata Schema 4.4 (mapping is here https://github.com/rdawg-pidinst/schema/blob/master/schema-datacite.rst).
+An example of SensorML use PIDINST schema is here: https://linkedsystems.uk/system/instance/TOOL0022_2490/current/
