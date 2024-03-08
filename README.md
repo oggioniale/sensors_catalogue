@@ -25,7 +25,7 @@ if it is not presents:
 in a triple store by web app form;
 or
 2.2.1. fill the `new_manufacturer.xlsx` file;
-2.2.2. execute the `n`w_manufacturer()` functions for create RDF (both ttl and xml)
+2.2.2. execute the `new_manufacturer()` functions for create RDF (both ttl and xml)
 version of the record(s) included in the manufacturer excel file;
 
 ```
@@ -56,20 +56,20 @@ TODO missing the push!
 ```
 2.2.4. open the terminal and execute git push
 
-3. use `s`nsors_catalogue()` function for obtain SensorML XML of system and, eventually,
+3. use `sensors_catalogue()` function for obtain SensorML XML of system and, eventually,
 of components for all the sensors described in the excel file;
 ```
 sensors_catalogue(excel_path = "./sensors.xlsx")
 ```
 
-4. use `s`nsorML_type_rdf()` function for obtain ttl of system and, eventually, of
+4. use `sensorML_type_rdf()` function for obtain ttl of system and, eventually, of
 components starting from XML file (the output of `sensors_catalogue()` function);
 ```
 sensorML_type_rdf(
   files_path = "./sensorML_files_system_4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a/"
 )
 ```
-5. use `s`nsorML_instance_rdf()` function for obtain ttl version of sensor instance
+5. use `sensorML_instance_rdf()` function for obtain ttl version of sensor instance
 shared in SOS system.
 this function is in the TODO list 
 
