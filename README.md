@@ -14,24 +14,34 @@ source("manufacturers/check_man_exist.R")
 source("manufacturers/new_manufacturer.R")
 source("sensors2SensorML/sensors_catalogue.R")
 source("SensorML2TTL/sensorML_type_rdf.R")
+```
 
 # The workflow of this app is:
-# 1. fill the sensors_template.xlsx spreadsheet
+1. fill the sensors.xlsx spreadsheet
 
-# 2. check if the information about manufacturer is in triplestore fuseki (http://fuseki1.get-it.it/dataset.html?tab=query&ds=/manufacturers);
-# if it is not presents:
-# 2.1. execute the new_manufacturer_ui() function for create single manufacturer record in a triple store by web app form;
-# or
-# 2.2.1. fill the new_manufacturer.xlsx file;
-# 2.2.2. execute the new_manufacturer() functions for create RDF (both ttl and xml) version of the record(s) included in the manufacturer excel file;
+2. check if the information about manufacturer is in triplestore fuseki
+(http://fuseki1.get-it.it/dataset.html?tab=query&ds=/manufacturers);
+if it is not presents:
+2.1. execute the new_manufacturer_ui() function for create single manufacturer record
+in a triple store by web app form;
+or
+2.2.1. fill the new_manufacturer.xlsx file;
+2.2.2. execute the new_manufacturer() functions for create RDF (both ttl and xml)
+version of the record(s) included in the manufacturer excel file;
+
+```
 new_manufacturer(
   excel_path = "new_manufacturers.xlsx",
   orcid_creator = "http://orcid.org/0000-0002-7997-219X"
 )
-# 2.2.3 update GitHub repository https://github.com/oggioniale/RDF-FOAF-Manufacturer-list/tree/master
+```
+2.2.3 update GitHub repository https://github.com/oggioniale/RDF-FOAF-Manufacturer-list/tree/master
+```
 path_github <- "/Users/alessandrooggioni/Sites/GitHub/"
 repo <- paste0(path_github, "RDF-FOAF-Manufacturer-list/")
-# copy files rdf created to the folder of github repo "RDF-FOAF-Manufacturer-list" ----
+```
+copy files rdf created to the folder of github repo "RDF-FOAF-Manufacturer-list" ----
+```
 files <- list.files(path = "./manufacturers", pattern = "\\.rdf$")
 file.copy(from = paste0("./manufacturers/", files), to = repo)
 # remotes::install_github("ropensci/git2r")
@@ -40,18 +50,29 @@ setwd(repo)
 git2r::add(repo = repo, path = list.files(pattern = files))
 git2r::commit(repo = repo, message = "new manufacturers")
 setwd("../sensors_catalogue/")
-# TODO missing the push!
-# git2r::push(...)
-# 2.2.4. open the terminal and execute git push
-
-# 3. use sensors_catalogue() function for obtain SensorML XML of system and, eventually, of components for all the sensors described in the excel file;
-sensors_catalogue(excel_path = "./sensors_template.xlsx")
-
-# 4. use sensorML_type_rdf() function for obtain ttl of system and, eventually, of components starting from XML file (the output of sensors_catalogue() function);
-sensorML_type_rdf(files_path = "./sensorML_files_system_4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a/")
-
-# 5. use sensorML_instance_rdf() function for obtain ttl version of sensor instance shared in SOS system.
-# this function is in the TODO list 
 ```
+TODO missing the push!
+```
+# git2r::push(...)
+```
+2.2.4. open the terminal and execute git push
+
+3. use sensors_catalogue() function for obtain SensorML XML of system and, eventually,
+of components for all the sensors described in the excel file;
+```
+sensors_catalogue(excel_path = "./sensors.xlsx")
+```
+
+4. use sensorML_type_rdf() function for obtain ttl of system and, eventually, of
+components starting from XML file (the output of sensors_catalogue() function);
+```
+sensorML_type_rdf(
+  files_path = "./sensorML_files_system_4ce8484c-b9e1-11ee-98e3-daf69f6cfb8a/"
+)
+```
+5. use sensorML_instance_rdf() function for obtain ttl version of sensor instance
+shared in SOS system.
+this function is in the TODO list 
+
 The production flow is illustrated in the figure:
 <img width="766" alt="image" src="https://github.com/oggioniale/sensors_catalogue/assets/1393893/ebcf4adc-d9c5-452d-a18d-ef2e50f9c5d2">
